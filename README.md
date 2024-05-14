@@ -538,7 +538,7 @@ In case you want to re-flash the device, perform the following steps:
 ## Regenerating the demo with Harmony 3
 
 To add additional features to the OOB demo, you might have to regenerate the demo code using Harmony3 after adding additional components or changing the existing configuration.
-Ensure that you use the same version or Harmony 3 components used in the original demo codebase while regenerating code. You can see the version dependencies of the demo in `harmony-manifest-success.yml` file found at `pic32mzw1_curiosity_oob\src\firmware\src\config\pic32mz_w1_curiosity` into Harmony3 MCCcontent manager. 
+Ensure that you use the same version or Harmony 3 components used in the original demo codebase while regenerating code. You can see the version dependencies of the demo in `harmony-manifest-success.yml` file found at `pic32mzw1_curiosity_oob\src\firmware\src\config\pic32mz_w1_curiosity` into Harmony3 MCC content manager. 
 
 In case of a missmatch between the Harmony 3 components present in the demo and the ones available in disk, Harmony3 Configurator will popup a warning screen during launch. In the case of the sample shown below, the wireless_system_pic32mzw1_wfi32e01 component available in disk is `3.8.0` while the version used in the project is `3.9.0`. 
 
@@ -546,9 +546,9 @@ In case of a missmatch between the Harmony 3 components present in the demo and 
 <img src="resources/media/mcc_1.png" width=480/>
 </p>
 
-It is recommended to use the same versions used in the project while regenerationg the project. 
+It is recommended to use the same versions used in the project while regenerating the project. 
 
-To sync your Harmony3 setup to match the versions used in the demo, folow these steps:
+To sync your Harmony3 setup to match the versions used in the demo, follow these steps:
 
 1. Open Harmony3 MCC Content manager from the _Device Resources_ tab of Project Graph.
 
@@ -556,7 +556,8 @@ To sync your Harmony3 setup to match the versions used in the demo, folow these 
 <img src="resources/media/content_manager.png" width=480/>
 </p>
 
-2. In the MCC content Mangaer, search for the required component and then select the required version.
+2. In the MCC content Manager, search for the required component and then select the required version. 
+In the case of sample shown below, search for the wireless_system_pic32mzw1_wfi32e01 component and select the latest version v3.9.0.
 
 <p align="center">
 <img src="resources/media/mcc_2.png" width=480/>
