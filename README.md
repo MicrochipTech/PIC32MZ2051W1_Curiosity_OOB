@@ -393,7 +393,7 @@ After changing the cloud configurations to connect the device to your cloud inst
 
     - Keep the switch engaged until the Red LED turns on.
 
-2.  Flash the original demo image by downloading it from the [releases](https://github.com/MicrochipTech/PIC32MZW1_Curiosity_OOB/releases) tab.
+2.  Flash the original demo image by downloading it from the [releases](https://github.com/MicrochipTech/PIC32MZ2051W1_Curiosity_OOB/releases) tab.
 
 ## Application Overview
 
@@ -531,45 +531,39 @@ In case you want to re-flash the device, perform the following steps:
 1.	Download and install (MPLABX Integrated Programming Environment)[https://www.microchip.com/mplab/mplab-integrated-programming-environment]
 2.	Connect the power source selection jumper (J202) shunt in ‘PKOB-VIN’ position
 3.	Connect the Curiosity Board’s debug USB (J302) to your PC.
-4.	Open MPLABX IPE and select ‘PIC32MZ1025W104132’ device and ‘PKOB’ tool.
-5.	Download the latest FW image (hex file) from the (releases)[ https://github.com/MicrochipTech/PIC32MZW1_Curiosity_OOB/releases/latest] tab and load it into the IPE ‘hex file’ section.
+4.	Open MPLABX IPE and select ‘PIC32MZ2051W104132’ device and ‘PKOB’ tool.
+5.	Download the latest FW image (hex file) from the (releases)[ https://github.com/MicrochipTech/PIC32MZ2051W1_Curiosity_OOB/releases/latest] tab and load it into the IPE ‘hex file’ section.
 6.	Click on the ‘connect’ and then the ‘program‘ buttons in the IPE and wait for device programming to complete.
 
 ## Regenerating the demo with Harmony 3
 
 To add additional features to the OOB demo, you might have to regenerate the demo code using Harmony3 after adding additional components or changing the existing configuration.
-Ensure that you use the same version or Harmony 3 components used in the original demo codebase while regenerating code. You can see the version dependencies of the demo in `harmony-manifest-success.yml` file found at `src\firmware\src\config\pic32mz_w1_curiosity` into Harmony3 content manager. 
+Ensure that you use the same version or Harmony 3 components used in the original demo codebase while regenerating code. You can see the version dependencies of the demo in `harmony-manifest-success.yml` file found at `pic32mzw1_curiosity_oob\src\firmware\src\config\pic32mz_w1_curiosity` into Harmony3 MCCcontent manager. 
 
-In case of a missmatch between the Harmony 3 components present in the demo and the ones available in disk, Harmony3 Configurator will popup a warning screen during launch. In the case of the sample shown below, the MHC component available in disk is `3.6.0` while the version used in the project is `3.5.1`. 
+In case of a missmatch between the Harmony 3 components present in the demo and the ones available in disk, Harmony3 Configurator will popup a warning screen during launch. In the case of the sample shown below, the wireless_system_pic32mzw1_wfi32e01 component available in disk is `3.8.0` while the version used in the project is `3.9.0`. 
 
 <p align="center">
-<img src="resources/media/image25.png" width=480/>
+<img src="resources/media/mcc_1.png" width=480/>
 </p>
 
 It is recommended to use the same versions used in the project while regenerationg the project. 
 
 To sync your Harmony3 setup to match the versions used in the demo, folow these steps:
 
-1. Open Harmony3 Content manager
-2. Navigate to `Local Packages` and click on `Load manifest file`
+1. Open Harmony3 MCC Content manager from the _Device Resources_ tab of Project Graph.
 
 <p align="center">
-<img src="resources/media/image23.png" width=480/>
+<img src="resources/media/content_manager.png" width=480/>
 </p>
 
-3. When you select the project manifest file, the required versions of Harmony3 dependencies will be checked out by content manager. In this case, `v3.1.0` of cryptoauthlib was required by the project was not matching the version available in the local package and was updated accordingly.
+2. In the MCC content Mangaer, search for the required component and then select the required version.
 
 <p align="center">
-<img src="resources/media/image24.png" width=480/>
+<img src="resources/media/mcc_2.png" width=480/>
 </p>
 
-4. Close content manager and open the Harmony configurator to continue.
+3. Then click Apply button. It will update the component version accordingly.
 
-While generating code, make sure that you use “USER_RECENT” merge strategy.
-
-<p align="center">
-<img src="resources/media/image20.png" width=480/>
-</p>
 
 If the right dependencies are loaded, there should not be any additional merges while regenerating code without any configuration change.
 
