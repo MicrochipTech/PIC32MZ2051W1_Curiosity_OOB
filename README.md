@@ -6,13 +6,13 @@ Features: **| Secure Cloud connectivity | Voice Control |**
 
 [**Frequently Asked Questions**](https://github.com/MicrochipTech/PIC32MZW1_Curiosity_OOB/blob/master/faq.md)
 
-[![Latest release](https://img.shields.io/github/v/release/MicrochipTech/PIC32MZW1_Curiosity_OOB?sort=semver&style=for-the-badge)](https://github.com/MicrochipTech/PIC32MZW1_Curiosity_OOB/releases/latest)
-[![Latest release date](https://img.shields.io/github/release-date/MicrochipTech/PIC32MZW1_Curiosity_OOB?style=for-the-badge)](https://github.com/MicrochipTech/PIC32MZW1_Curiosity_OOB/releases/latest)
+[![Latest release](https://img.shields.io/github/v/release/MicrochipTech/PIC32MZ2051W1_Curiosity_OOB?sort=semver&style=for-the-badge)](https://github.com/MicrochipTech/PIC32MZ2051W1_Curiosity_OOB/releases/latest)
+[![Latest release date](https://img.shields.io/github/release-date/MicrochipTech/PIC32MZ2051W1_Curiosity_OOB?style=for-the-badge)](https://github.com/MicrochipTech/PIC32MZ2051W1_Curiosity_OOB/releases/latest)
 
 
 ## Introduction
 
-1.  This page describes the Out of Box (OOB) operation of the PIC32 WFI32E Curiosity board .
+1.  This page describes the Out of Box (OOB) operation of the PIC32 WFI32 Curiosity board .
 
 2.  For accessing pre-built hex files, release notes, and known issues, please click the [**Releases** tab](https://github.com/MicrochipTech/PIC32MZW1_Curiosity_OOB/releases).
 
@@ -34,12 +34,12 @@ alt="Unbox the new WFI32E01 Curiosity evaluation board to see how to connect to 
 
 - USB-UART converter (optional)
 
-***Note:*** Please use MPLABX 5.45 or higher with MHC 3.6.2 or higher to edit and regenerate the project 
+***Note:*** Please use MPLABX 6.15 or higher with MCC 5.3.7 or higher to edit and regenerate the project 
 
 ## Hardware Setup
 
 <p align="center">
-<img src="resources/media/image1.png" width=720/>
+<img src="resources/media/wfi32e03.png" width=720/>
 </p>
 
 1.  Ensure that the credentials to the Wi-Fi AP with Internet access are handy
@@ -174,8 +174,10 @@ The user can follow the below steps to verify the OTA functionality by downloadi
         - File/Img Download - NVM Start Address  : This parameter specifies the Program flash start address where the downloaded files/images should be stored. 
         - Size in Bytes of Slotx : Size of the binary/Image
         - Jump Address : Jump address of the new image/binary
+
+        Note : User should make sure that the Application which needs to be downloaded by OTA will have proper Linker-script and startup code.
   
-    - By default, digest and Signature verifications of the Image will be disabled.
+    - By default, Digest and Signature verifications of the Image will be disabled.
 
 3. Generate the code using MCC.
 
@@ -215,6 +217,8 @@ The user can follow the below steps to verify the OTA functionality by downloadi
         <img src="resources/media/http_server.png"/>
         <p/>
 
+        Refer [OTA System Service](https://microchip-mplab-harmony.github.io/wireless_system_pic32mzw1_wfi32e01/GUID-AF87F0BB-E319-4436-A302-357BFA7E193E.html) for more details on OTA.
+
 5. Run the demo and wait till it get connected to MQTT. Once the connection to MQTT is established, enter the command "_start ota_". This command will trigger the OTA demo and download the test app binary from the server.
 
       <p align="center">
@@ -230,7 +234,7 @@ Enter 'b' so that it will jump to the test app and the message from Test App wil
 
   - Notes:
 
-    User should make sure that, they do not overwrite the files related to USB. Also, do not make any changes to the Task Delay for _SYS_OTA_Tasks and the sequence of Task creation in "SYS_Tasks" of "tasks.c" file.
+    User should make sure that, they do not overwrite the files related to USB repository and _tasks.c_ file.
 
 ## Adding Another Sensor
 
@@ -240,7 +244,7 @@ The front-end supports visualization of up to three pieces of sensor data. Since
 
 2.  Open the project in MPLABX.
     
-      - Use [MPLABX](https://www.microchip.com/mplab/mplab-x-ide?gclid=Cj0KCQjw_ez2BRCyARIsAJfg-ksTefWxHYsG43Succ4obrD2ecwpP99wMUHjUCuoBdvmveCIB8JgoMIaAiCdEALw_wcB) version `5.40` or above and [XC32](https://www.microchip.com/mplab/compilers) version `2.50`. (**Note:** The demo is yet to be upgraded to XC32 3.01.)
+      - Use [MPLABX](https://www.microchip.com/mplab/mplab-x-ide?gclid=Cj0KCQjw_ez2BRCyARIsAJfg-ksTefWxHYsG43Succ4obrD2ecwpP99wMUHjUCuoBdvmveCIB8JgoMIaAiCdEALw_wcB) version `6.15` or above and [XC32](https://www.microchip.com/mplab/compilers) version `4.35`.
 
 3.  In ***“mqtt\_app.c"*** file comment out the existing telemetry message line and uncomment the graduation step.
 
@@ -250,7 +254,7 @@ The front-end supports visualization of up to three pieces of sensor data. Since
 
 4.  Recompile the application and download it into the target.
     - You can access the firmware source code under the `src/firmware` folder of this repo
-    - To compile the project, open the firmware using [MPLAB X IDE](https://www.microchip.com/mplab/mplab-x-ide) version `5.40` or higher and use [XC32](https://www.microchip.com/mplab/compilers) compiler version `2.41` or higher
+    - To compile the project, open the firmware using [MPLAB X IDE](https://www.microchip.com/mplab/mplab-x-ide) version `6.15` or higher and use [XC32](https://www.microchip.com/mplab/compilers) compiler version `4.35` or higher
 
 5.  Follow the steps given under ***“Mode of Operation”***.
 
