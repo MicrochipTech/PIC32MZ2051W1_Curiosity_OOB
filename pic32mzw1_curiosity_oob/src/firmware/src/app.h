@@ -39,7 +39,7 @@
 extern "C" {
 
 #endif
-#define APP_VERSION "WFI32E03_CURIOSITY_1.0.0"
+#define APP_VERSION "WFI32E03_CURIOSITY_1.0.1"
 typedef enum { 
     APP_IDLE = 0,
    

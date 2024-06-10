@@ -456,6 +456,7 @@
           <itemPath>../src/config/pic32mz_w1_curiosity_wolfcrypt/exceptions.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_wolfcrypt/pmu_init.c</itemPath>
           <itemPath>../src/config/pic32mz_w1_curiosity_wolfcrypt/tasks.c</itemPath>
+          <itemPath>../src/pic32_data_init_core.S</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="wolfcrypt" projectFiles="true">

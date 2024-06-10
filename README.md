@@ -14,7 +14,7 @@ Features: **| Secure Cloud connectivity | Voice Control |**
 
 1.  This page describes the Out of Box (OOB) operation of the PIC32 WFI32 Curiosity board .
 
-2.  For accessing pre-built hex files, release notes, and known issues, please click the [**Releases** tab](https://github.com/MicrochipTech/PIC32MZW1_Curiosity_OOB/releases).
+2.  For accessing pre-built hex files, release notes, and known issues, please click the [**Releases** tab](https://github.com/MicrochipTech/PIC32MZ2051W1_Curiosity_OOB/releases).
 
 You can also watch a quick introduction to this demo .
 

@@ -90,7 +90,6 @@ void APP_Tasks(void) {
             }
             else if(app_mode == APP_OTA)
             {
-                SYS_CONSOLE_PRINT("INIT OTA\r\n");
                 App_state = APP_TRIGGER_OTA;
             }
             break;
